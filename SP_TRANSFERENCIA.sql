@@ -1,0 +1,13 @@
+CREATE PROCEDURE SP_TRANSFERENCIA
+@JogadorId int,
+@ClubeId int
+
+AS
+BEGIN 
+UPDATE Jogador SET ClubeId = @ClubeId 
+WHERE Id = @JogadorId
+END
+
+EXEC SP_TRANSFERENCIA 1,2
+
+SELECT * FROM Jogador
